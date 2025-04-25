@@ -12,7 +12,7 @@
         "git"
         "sudo"
         "rust"
-        # "fzf"
+        "fzf"
       ];
     };
     profileExtra = ''
