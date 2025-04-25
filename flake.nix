@@ -139,9 +139,9 @@
       };
       modules = [
         ./hosts/${host}/configuration.nix
-        # (_: {
-        #   system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
-        # })
+        (_: {
+          system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
+        })
       ];
     };
   };
