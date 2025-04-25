@@ -83,7 +83,7 @@
       flake = self;
     };
   in {
-    lib = inputs.lib;
+    inherit (inputs) lib;
     # inherit (inputs) lib;
     # Formatter for nix fmt
     formatter.${system} = treefmtEval.config.build.wrapper;

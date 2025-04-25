@@ -1,12 +1,6 @@
-
-{
-  inputs,
-  ...
-}:
-let
+{inputs, ...}: let
   # Package declaration
   # ---------------------
-
   pkgs = import inputs.nixpkgs {
     inherit (inputs.lib) system;
     config.allowUnfree = true;
@@ -19,9 +13,7 @@ let
       })
     ];
   };
-in
-{
-
+in {
   # Set pkgs for hydenix globally, any file that imports pkgs will use this
   nixpkgs.pkgs = pkgs;
 
@@ -34,13 +26,13 @@ in
     # === GPU-specific configurations ===
 
     /*
-      For drivers, we are leveraging nixos-hardware
-      Most common drivers are below, but you can see more options here: https://github.com/NixOS/nixos-hardware
+    For drivers, we are leveraging nixos-hardware
+    Most common drivers are below, but you can see more options here: https://github.com/NixOS/nixos-hardware
     */
 
     #! EDIT THIS SECTION
     # For NVIDIA setups
-    # inputs.hydenix.inputs.nixos-hardware.nixosModules.common-gpu-nvidia
+    # inputs.nixos-hardware.nixosModules.common-gpu-nvidia
 
     # For AMD setups
     inputs.nixos-hardware.nixosModules.common-gpu-amd
@@ -65,51 +57,18 @@ in
     };
 
     #! EDIT THIS USER (must match users defined below)
-    users."jr" =
-      { ... }:
-      {
-        imports = [
-          inputs.lib.homeModules
-          ./modules/hm
-        ];
-      };
+    users."jr" = {...}: {
+      imports = [
+        inputs.lib.homeModules
+        ./modules/hm
+      ];
+    };
   };
 
-  # IMPORTANT: Customize the following values to match your preferences
-  hydenix = {
-    enable = true; # Enable the Hydenix module
-
-    #! EDIT THESE VALUES
-    hostname = "jr"; # Change to your preferred hostname
-    timezone = "America/New_York"; # Change to your timezone
-    locale = "en_US.UTF-8"; # Change to your preferred locale
-
-    /*
-      Optionally edit the below values, or leave to use hydenix defaults
-      visit ./modules/hm/default.nix for more options
-
-      audio.enable = true; # enable audio module
-      boot = {
-        enable = true; # enable boot module
-        useSystemdBoot = true; # disable for GRUB
-        grubTheme = pkgs.hydenix.grub-retroboot; # or pkgs.hydenix.grub-pochita
-        grubExtraConfig = ""; # additional GRUB configuration
-        kernelPackages = pkgs.linuxPackages_zen; # default zen kernel
-      };
-      gaming.enable = true; # enable gaming module
-      hardware.enable = true; # enable hardware module
-      network.enable = true; # enable network module
-      nix.enable = true; # enable nix module
-      sddm = {
-        enable = true; # enable sddm module
-        theme = pkgs.hydenix.sddm-candy; # or pkgs.hydenix.sddm-corners
-      };
-      system.enable = true; # enable system module
-    */
-  };
+  networking.hostName = "magic";
 
   #! EDIT THESE VALUES (must match users defined above)
-  users.users.hydenix = {
+  users.users.jr = {
     isNormalUser = true; # Regular user account
     initialPassword = "tbone123"; # Default password (CHANGE THIS after first login with passwd)
     extraGroups = [
@@ -121,5 +80,5 @@ in
     shell = pkgs.zsh; # Change if you prefer a different shell
   };
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 }

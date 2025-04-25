@@ -6,7 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = {...} @ inputs: let
+  outputs = inputs: let
     HOSTNAME = "magic";
 
     myConfig = inputs.nixpkgs.lib.nixosSystem {
