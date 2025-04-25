@@ -26,7 +26,7 @@ $env.XDG_CONFIG_HOME = $env.HOME + "/.config"
 $env.TOPIARY_CONFIG_FILE = ($env.XDG_CONFIG_HOME | path join topiary languages.ncl)
 $env.TOPIARY_LANGUAGE_DIR = ($env.XDG_CONFIG_HOME | path join topiary languages)
 
-use ~/flakes/homeManagerModules/nushell/fzf.nu [
+use ~/flake/home/shells/nushell/fzf.nu [
   carapace_by_fzf
   complete_line_by_fzf
   update_manpage_cache
@@ -151,11 +151,11 @@ $env.config.keybindings ++= [
     }
   }
 ]
-use ~/flakes/homeManagerModules/nushell/sesh.nu sesh_connect
-use ~/flakes/homeManagerModules/nushell/auto-pair.nu *
-use ~/flakes/homeManagerModules/nushell/scripts/extractor.nu extract
+use ~/flake/home/shells/nushell/sesh.nu sesh_connect
+use ~/flake/home/shells/nushell/auto-pair.nu * 
 set auto_pair_keybindings
-use ~/flakes/homeManagerModules/nushell/matchit.nu *
+use ~/flake/home/shells/nushell/scripts/extractor.nu extract
+use ~/flake/home/shells/nushell/matchit.nu *
 set matchit_keybinding
 # $env.MANPAGER = "nvim +Man!"
 # $env.config.edit_mode = "vi"
@@ -165,10 +165,9 @@ nitch
 # pokego --random 1-3
 # fastfetch
 
-source ~/my-nixos/home/shells/nushell/zoxide.nu
-source ~/my-nixos/home/shells/nushell/carapace.nu
-source ~/my-nixos/home/shells/nushell/atuin.nu
-source ~/my-nixos/home/shells/nushell/nix.nu
-# source ~/.cache/carapace/init.nu
-source ~/my-nixos/home/shells/nushell/nu_scripts/themes/nu-themes/ayu.nu
-source ~/my-nixos/home/shells/nushell/completions-jj.nu
+source ~/flake/home/shells/nushell/zoxide.nu
+source ~/flake/home/shells/nushell/carapace.nu
+source ~/flake/home/shells/nushell/atuin.nu
+source ~/flake/home/shells/nushell/nix.nu
+source ~/flake/home/shells/nushell/nu_scripts/themes/nu-themes/ayu.nu
+source ~/flake/home/shells/nushell/completions-jj.nu

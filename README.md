@@ -21,6 +21,14 @@
 
 - `nix flake show`: Show the flakes outputs
 
+- I switched default shells to nushell, some commands act differently with nu compared to say zsh. That being said I set up `just` and made a `justfile` to simplify some commands, just typing `just` will show you what's available.
+
+- `just fu`: flake update
+
+- `just ncg`: garbage-collection
+
+- `just cleanup`: Run `nh os clean`
+
 **Defaults**:
 
 - Editor | helix
