@@ -35,7 +35,7 @@
       setopt pushd_ignore_dups
       setopt pushdminus
     '';
-    initContent = ''
+    initProfile = ''
              fastfetch
              if [ -f $HOME/.zshrc-personal ]; then
                source $HOME/.zshrc-personal

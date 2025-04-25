@@ -21,13 +21,23 @@
 
 - `nix flake show`: Show the flakes outputs
 
-- I switched default shells to nushell, some commands act differently with nu compared to say zsh. That being said I set up `just` and made a `justfile` to simplify some commands, just typing `just` will show you what's available.
+- I switched default shells to nushell, some commands act differently with nu compared to say zsh such as pipelines and `&&`. That being said I set up `just` and made a `justfile` to simplify some commands, just typing `just` will show you what's available.
+
+- `just`: show available just commands
 
 - `just fu`: flake update
 
 - `just ncg`: garbage-collection
 
 - `just cleanup`: Run `nh os clean`
+
+Some custom nushell commands: If they aren't working you may have to source them from the terminal with `source ~/flake/home/shells/nushell/nix.nu`:
+
+- `nix-upgrade -i`: interactive upgrade, choose which packages to upgrade
+
+- `nix-upgrade /path/to/flake` upgrade all
+
+- `nix-list-system` # list all installed packages
 
 **Defaults**:
 
@@ -54,11 +64,15 @@
 
   - Running `nix build .#nixos-vm` gives you a virtualized environment where you can test settings before deploying them on your host.
 
+  - To activate the `nixos-vm`, after the above command run: `result/bin/run-magic-vm`
+
 - Debugging:
 
-  - Integration with `treefmt-nix` for formatting checks (`checks.${system}.style`) for consistency in the whole configuration.
+  - Integration with `treefmt-nix` for formatting checks (`checks.${system}.style`) for consistency in the whole configuration. Run `nix fmt` in the flake directory to format the whole config and `nix flake check` to run the custom checks.
 
   - The `repl` function gives us an interactive debugging environment, allowing you to inspect Flake definitions `self`.
+
+  - `repl.nix` has a bunch of comments showing some commands you can try
 
 Example:
 
@@ -67,3 +81,7 @@ nix repl .#repl
 nix-repl> flake.inputs.nixpkgs.lib.version
 "25.05.20250421.c11863f"
 ```
+
+- In some situations you may be better off running `nixos-rebuild repl /path/to/flake`.
+
+- If you found this useful, please consider leaving a star!
