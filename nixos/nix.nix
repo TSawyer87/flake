@@ -12,6 +12,7 @@
         "flakes"
       ];
       # Number of simultaneous derivation builds
+      # "auto" = optimal #
       max-jobs = lib.mkDefault "auto";
 
       # Number of cores per derivation build
@@ -20,7 +21,9 @@
     registry = {
       # self = this flake
       self.flake = inputs.self;
-      # nixpkgs.flake = inputs.nixpkgs;
+      # registers your nixpkgs flake input to `nixpkgs`
+      # nix search nixpkgs#hello
+      nixpkgs.flake = inputs.nixpkgs;
     };
     # gc = {
     #   automatic = true;
