@@ -7,7 +7,7 @@
   home = {
     username = "jr";
     homeDirectory = "/home/jr";
-    stateVersion = "24.11";
+    stateVersion = "25.05";
   };
 
   # Import Program Configurations
