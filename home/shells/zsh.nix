@@ -103,19 +103,20 @@
              export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
              export FZF_DEFAULT_OPTS='-i --height=50%'
              # export HELIX_RUNTIME=~/src/helix/runtime
-             export NIX_PATH="$NIX_PATH:my-flake=flake:/home/jr/my-nixos"
+             export NIX_PATH="$NIX_PATH:my-flake=flake:/home/jr/flake"
     '';
     shellAliases = {
       sv = "sudo nvim";
-      fr = "nh os switch --hostname magic /home/jr/my-nixos";
-      ft = "nh os test --hostname magic /home/jr/my-nixos"; # dont save generation to boot menu
-      fu = "nh os switch --hostname magic --update /home/jr/my-nixos";
-      upd = "sudo nixos-rebuild switch --upgrade --flake /home/jr/my-nixos";
+      fr = "nh os switch --hostname magic /home/jr/flake";
+      ft = "nh os test --hostname magic /home/jr/flake"; # dont save generation to boot menu
+      fu = "nh os switch --hostname magic --update /home/jr/flake";
+      upd = "sudo nixos-rebuild switch --upgrade --flake /home/jr/flake";
       rebuild = "/home/jr/scripts/performance_hook.sh";
       ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
       opts = "man home-configuration.nix";
       zd = "zeditor";
       lg = "lazygit";
+      ljj = "lazyjj";
       ip = "ip -color";
       tarnow = "tar -acf ";
       untar = "tar -zxvf ";

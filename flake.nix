@@ -40,7 +40,7 @@
       term = "ghostty";
       keys = "us";
       browser = "firefox";
-      flake = builtins.getEnv "HOME" + "/my-nixos";
+      flake = builtins.getEnv "HOME" + "/flake";
     };
 
     inputs =

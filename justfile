@@ -1,6 +1,6 @@
 # nix shell nixpkgs#just nixpkgs#nushell
 set shell := ["nu", "-c"]
-flake_path := "/home/jr/my-nixos"
+flake_path := "/home/jr/flake"
 hostname := "magic"
 home_manager_output := "jr@magic"
 

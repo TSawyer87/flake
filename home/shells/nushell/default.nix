@@ -51,9 +51,9 @@
 
           # Nix
           # fr = "nh os switch --hostname magic /home/jr/flakes";
-          fr = "nh os switch /home/jr/my-nixos";
-          ft = "nh os test /home/jr/my-nixos";
-          fu = "nh os switch --update /home/jr/my-nixos";
+          fr = "nh os switch /home/jr/flake";
+          ft = "nh os test /home/jr/flake";
+          fu = "nh os switch --update /home/jr/flake";
           opts = "man home-configuration.nix";
 
           cat = "${pkgs.bat}/bin/bat";
