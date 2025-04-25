@@ -6,7 +6,7 @@
     config.allowUnfree = true;
     overlays = [
       inputs.lib.overlays
-      (final: prev: {
+      (_final: _prev: {
         userPkgs = import inputs.nixpkgs {
           config.allowUnfree = true;
         };
