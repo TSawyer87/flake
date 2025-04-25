@@ -15,7 +15,7 @@
     #   };
     # };
     # networkmanager.wifi.backend = "iwd";
-    hostName = "magic";
+    # hostName = "magic";
     firewall = {
       enable = true;
       # allowedTCPPorts = [80 443 25];
