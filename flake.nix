@@ -102,14 +102,14 @@
         description = "flake template";
         welcomeText = ''
           👻
-            1. edit `configuration.nix` with your preferences for hydenix
-              - visit https://github.com/richen604/hydenix for module documentation
+            1. edit `configuration.nix` with your preferences
+              - visit https://github.com/TSawyer87/flake for
             2. run `sudo nixos-generate-config --show-hardware-config > hardware-configuration.nix`
             3. `git init && git add .` (flakes have to be managed via git)
             4. run any of the packages in your new `flake.nix`
               - for rebuild, use `sudo nixos-rebuild switch --flake .`
             5. DON'T FORGET: change your password for all users with `passwd` from initialPassword set in `configuration.nix`
-            6. NOTE: After rebuild, the first boot may take a while depending on how many `hydenix.hm.themes` are enabled, as the system generates cache.
+            6. NOTE: After rebuild, the first boot may take a while.
         '';
       };
     };
