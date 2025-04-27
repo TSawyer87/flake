@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  userVars,
   ...
 }: let
   cfg = config.gitModule;
@@ -15,13 +16,15 @@ in {
 
     userName = lib.mkOption {
       type = lib.types.nullOr lib.types.str;
-      default = "TSawyer87";
+      # default = "TSawyer87";
+      default = userVars.gitUsername;
       description = "Git user name";
     };
 
     userEmail = lib.mkOption {
       type = lib.types.nullOr lib.types.str;
-      default = "sawyerjr.25@gmail.com";
+      # default = "sawyerjr.25@gmail.com";
+      default = userVars.gitEmail;
       description = "Git user email";
     };
 
