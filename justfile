@@ -43,7 +43,7 @@ clean:
 # Upgrade
 [group('nix')]
 upd:
-    sudo nixos-rebuild switch --upgrade --flake {{flake_path}}
+    nix flake update ; nh os switch --hostname {{hostname}} {{flake_path}}
 
 # Nix Repl flake:nixpkgs
 [group('nix')]
