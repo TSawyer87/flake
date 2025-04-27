@@ -7,7 +7,7 @@
 }: let
   cfg = config.magic.gitModule;
 in {
-  options.gitModule = {
+  options.magic.gitModule = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
