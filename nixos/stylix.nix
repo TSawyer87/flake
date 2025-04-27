@@ -49,7 +49,7 @@ with lib; {
       };
       fonts = {
         monospace = {
-          package = config.lib.mkDefault pkgs.nerd-fonts.jetbrains-mono;
+          package = lib.mkDefault pkgs.nerd-fonts.jetbrains-mono;
           name = "JetBrains Mono";
         };
         sansSerif = {
@@ -61,8 +61,8 @@ with lib; {
           name = "Montserrat";
         };
         sizes = {
-          applications = config.lib.mkDefault 12;
-          terminal = config.lib.mkDefault 12;
+          applications = lib.mkDefault 12;
+          terminal = lib.mkDefault 12;
           desktop = 11;
           popups = 12;
         };
