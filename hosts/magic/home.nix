@@ -16,10 +16,13 @@
     inputs.dont-track-me.homeManagerModules.default
   ];
 
-  gitModule = {
-    enable = true;
-    userName = "TSawyer87";
-    userEmail = "sawyerjr.25@gmail.com";
+  # Custom home-manager modules
+  magic = {
+    gitModule = {
+      enable = true;
+      userName = "TSawyer87";
+      userEmail = "sawyerjr.25@gmail.com";
+    };
   };
 
   dont-track-me = {

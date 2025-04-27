@@ -5,7 +5,7 @@
   userVars,
   ...
 }: let
-  cfg = config.gitModule;
+  cfg = config.magic.gitModule;
 in {
   options.gitModule = {
     enable = lib.mkOption {
@@ -16,14 +16,12 @@ in {
 
     userName = lib.mkOption {
       type = lib.types.nullOr lib.types.str;
-      # default = "TSawyer87";
       default = userVars.gitUsername;
       description = "Git user name";
     };
 
     userEmail = lib.mkOption {
       type = lib.types.nullOr lib.types.str;
-      # default = "sawyerjr.25@gmail.com";
       default = userVars.gitEmail;
       description = "Git user email";
     };
