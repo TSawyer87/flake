@@ -32,6 +32,7 @@
   ############################################################################
 
   nixpkgs.overlays = [inputs.lib.overlays];
+
   # Enable or Disable Stylix
   stylixModule.enable = true;
 
