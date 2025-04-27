@@ -23,6 +23,9 @@
       userName = "TSawyer87";
       userEmail = "sawyerjr.25@gmail.com";
     };
+    jjModule = {
+      enable = true;
+    };
   };
 
   dont-track-me = {
