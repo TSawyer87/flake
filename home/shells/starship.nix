@@ -115,8 +115,8 @@
     init = "${pkgs.starship}/bin/starship init";
     dir = "${config.xdg.cacheHome}/starship";
   in {
-    bash.initExtra = ''eval "$(${init} bash)"'';
-    zsh.initExtra = ''eval "$(${init} zsh)"'';
+    bash.initContent = ''eval "$(${init} bash)"'';
+    zsh.initContent = ''eval "$(${init} zsh)"'';
     nushell = {
       extraEnv = "mkdir ${dir} ; ${init} nu | save -f ${dir}/init.nu";
       extraConfig = "use ${dir}/init.nu";

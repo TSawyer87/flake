@@ -31,7 +31,7 @@
 
 - `just cleanup`: Run `nh os clean`
 
-Some custom nushell commands: If they aren't working you may have to source them from the terminal with `source ~/flake/home/shells/nushell/nix.nu`:
+Some custom nushell commands:
 
 - `nix-upgrade -i`: interactive upgrade, choose which packages to upgrade
 
