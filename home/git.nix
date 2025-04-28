@@ -127,11 +127,11 @@ in {
 
     programs.git = {
       enable = true;
-      userName = cfg.userName;
-      userEmail = cfg.userEmail;
-      aliases = cfg.aliases;
-      ignores = cfg.ignores;
-      extraConfig = cfg.extraConfig;
+      inherit (cfg) userName;
+      inherit (cfg) userEmail;
+      inherit (cfg) aliases;
+      inherit (cfg) ignores;
+      inherit (cfg) extraConfig;
     };
   };
 }
